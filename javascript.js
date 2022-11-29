@@ -21,6 +21,13 @@ addbutton.addEventListener("click", () => {
   }
   let deleteButtonAll = document.querySelectorAll(".list-img"); //delete button elde edirik
   deleteButtonAll.forEach((deleteButton) => {
+    deleteButton.addEventListener("mouseover", () => {
+      deleteButton.setAttribute("src", "/img/delete_button_2.png");
+    });
+    deleteButton.addEventListener("mouseout", () => {
+      deleteButton.setAttribute("src", "/img/delete_button.png");
+    });
+
     deleteButton.addEventListener("click", () => {
       deleteButton.parentElement.remove();
       if (listInHTML.childElementCount <= 5) {
