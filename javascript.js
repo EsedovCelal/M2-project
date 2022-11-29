@@ -34,6 +34,9 @@ addbutton.addEventListener("click", () => {
       if (listInHTML.childElementCount <= 5) {
         fromInput.style.display = "block";
       }
+      if (listInHTML.childElementCount === 0) {
+        listInHTML.style.display = "none";
+      }
     });
   });
 });
