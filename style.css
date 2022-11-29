@@ -14,6 +14,7 @@
   cursor: pointer;
 }
 .list {
+  display: none;
   border-radius: 10px;
   border: 1px solid #c4c4c4;
   min-height: 40px;
@@ -50,12 +51,13 @@
   margin-top: 12px;
 }
 input {
-  width: 286px;
+  min-height: 40px;
+  width: 276px;
   border-radius: 10px;
   border: 1px solid #c4c4c4;
-  margin-left: 22px;
+  margin-left: 25px;
   margin-bottom: 18px;
-  padding-left: 7px;
+  padding-left: 8px;
 }
 .sort {
   display: flex;

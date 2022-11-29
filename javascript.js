@@ -3,6 +3,7 @@ let fromInput = document.querySelector("input"); //inputdan daxil edilen goturul
 let addbutton = document.querySelector(".button-main"); //buttonu goturduk
 
 addbutton.addEventListener("click", () => {
+  listInHTML.style.display = "block";
   if (fromInput.value === "") {
   } else {
     let createDiv = document.createElement("div"); //div yaratdiq
