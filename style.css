@@ -10,6 +10,9 @@
   height: 28px;
   margin-bottom: 17px;
 }
+.sort img {
+  cursor: pointer;
+}
 .list {
   border-radius: 10px;
   border: 1px solid #c4c4c4;

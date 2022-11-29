@@ -29,3 +29,11 @@ addbutton.addEventListener("click", () => {
     });
   });
 });
+
+let selectSortIcon = document.querySelector(".sort img");
+selectSortIcon.addEventListener("mouseover", () => {
+  selectSortIcon.setAttribute("src", "/img/Sort_black_A-Z.png");
+});
+selectSortIcon.addEventListener("mouseout", () => {
+  selectSortIcon.setAttribute("src", "/img/Sort_blur_A-Z.png");
+});
