@@ -10,7 +10,7 @@ addbutton.addEventListener("click", () => {
     let createPtag = document.createElement("p"); //P yaratiq
     let createImg = document.createElement("img");
     createImg.classList.add("list-img");
-    createImg.src = "/M2-project/M2-project/img/delete_button.png";
+    createImg.src = "/img/delete_button.png";
     createPtag.innerText = fromInput.value;
     createDiv.appendChild(createPtag);
     listInHTML.appendChild(createDiv).appendChild(createImg);
