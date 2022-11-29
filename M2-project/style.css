@@ -1,0 +1,76 @@
+.container {
+  overflow: hidden;
+  max-height: 397px;
+  width: 336px;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+}
+.header {
+  background-color: #ffdc40;
+  height: 28px;
+  margin-bottom: 17px;
+}
+.list {
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  min-height: 40px;
+  max-height: 200px;
+  width: 286px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 18px;
+  padding-top: 10px;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  margin-left: 27px;
+  margin-bottom: 15px;
+}
+.list-item p {
+  margin: 0px;
+  padding: 0px;
+}
+.list-item img {
+  cursor: pointer;
+}
+.todolist {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.addText {
+  color: white;
+  margin: 0;
+  margin-left: 50px;
+  margin-top: 12px;
+}
+input {
+  width: 286px;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  margin-left: 22px;
+  margin-bottom: 18px;
+  padding-left: 7px;
+}
+.sort {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  margin-bottom: 12px;
+}
+.button-main {
+  cursor: pointer;
+  overflow: hidden;
+  margin: auto;
+  height: 42px;
+  width: 150px;
+  border-radius: 71px;
+  background-color: #833ae0;
+  position: relative;
+  margin-bottom: 19px;
+}
+.button-png {
+  position: absolute;
+}
