@@ -3,12 +3,12 @@ let fromInput = document.querySelector("input"); //inputdan daxil edilen goturul
 let addbutton = document.querySelector(".button-main"); //buttonu goturduk
 
 addbutton.addEventListener("click", () => {
-  listInHTML.style.display = "block";
-  if (fromInput.value === "") {
-  } else {
+  if (fromInput.value !== "") {
+    listInHTML.style.display = "block";
     let createDiv = document.createElement("div"); //div yaratdiq
     createDiv.classList.add("list-item");
     let createPtag = document.createElement("p"); //P yaratiq
+    createPtag.contentEditable = true;
     let createImg = document.createElement("img");
     createImg.classList.add("list-img");
     createImg.src = "/img/delete_button.png";
@@ -28,7 +28,6 @@ addbutton.addEventListener("click", () => {
     deleteButton.addEventListener("mouseout", () => {
       deleteButton.setAttribute("src", "/img/delete_button.png");
     });
-
     deleteButton.addEventListener("click", () => {
       deleteButton.parentElement.remove();
       if (listInHTML.childElementCount <= 5) {
@@ -47,4 +46,12 @@ selectSortIcon.addEventListener("mouseover", () => {
 });
 selectSortIcon.addEventListener("mouseout", () => {
   selectSortIcon.setAttribute("src", "/img/Sort_blur_A-Z.png");
+});
+
+selectSortIcon.addEventListener("click", () => {
+  let selectListItems = [...document.querySelectorAll(".list-item")];
+  selectListItems.sort((a, b) => {
+    return parseInt(b.innerText) - parseInt(a.innerText);
+  });
+  listInHTML.replaceChildren(...listInHTML.children, ...selectListItems);
 });
