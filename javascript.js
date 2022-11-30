@@ -1,7 +1,7 @@
 let listInHTML = document.querySelector(".list");
 let fromInput = document.querySelector("input"); //inputdan daxil edilen goturulur
+let inInputDeletebuttn = document.querySelector(".main_input img");
 let addbutton = document.querySelector(".button-main"); //buttonu goturduk
-
 addbutton.addEventListener("click", () => {
   if (fromInput.value !== "") {
     listInHTML.style.display = "block";
@@ -18,6 +18,7 @@ addbutton.addEventListener("click", () => {
     fromInput.value = "";
     if (listInHTML.childElementCount >= 5) {
       fromInput.style.display = "none";
+      inInputDeletebuttn.style.display = "none";
     }
   }
   let deleteButtonAll = document.querySelectorAll(".list-img"); //delete button elde edirik
@@ -32,6 +33,7 @@ addbutton.addEventListener("click", () => {
       deleteButton.parentElement.remove();
       if (listInHTML.childElementCount <= 5) {
         fromInput.style.display = "block";
+        inInputDeletebuttn.style.display = "block";
       }
       if (listInHTML.childElementCount === 0) {
         listInHTML.style.display = "none";
@@ -41,8 +43,6 @@ addbutton.addEventListener("click", () => {
 });
 let downSort = document.querySelector(".sort img:first-child");
 let upSort = document.querySelector(".sort img:last-child");
-console.log(downSort);
-console.log(upSort);
 downSort.addEventListener("click", () => {
   downSort.style.display = "none";
   upSort.style.display = "block";
@@ -51,6 +51,12 @@ downSort.addEventListener("click", () => {
     return parseInt(b.innerText) - parseInt(a.innerText);
   });
   listInHTML.replaceChildren(...listInHTML.children, ...selectListItems);
+});
+downSort.addEventListener("mouseover", () => {
+  downSort.setAttribute("src", "/img/Sort_black_A-Z.png");
+});
+downSort.addEventListener("mouseout", () => {
+  downSort.setAttribute("src", "/img/Sort_blur_A-Z.png");
 });
 upSort.addEventListener("click", () => {
   upSort.style.display = "none";
@@ -61,19 +67,18 @@ upSort.addEventListener("click", () => {
   });
   listInHTML.replaceChildren(...listInHTML.children, ...selectListItems);
 });
-
-if ((downSort.style.display = "block")) {
-  downSort.addEventListener("mouseover", () => {
-    downSort.setAttribute("src", "/img/Sort_black_A-Z.png");
-  });
-  downSort.addEventListener("mouseout", () => {
-    downSort.setAttribute("src", "/img/Sort_blur_A-Z.png");
-  });
-} else if ((upSort.style.display = "block")) {
-  upSort.addEventListener("mouseover", () => {
-    upSort.setAttribute("src", "/img/Sort_black_Z-A.png");
-  });
-  upSort.addEventListener("mouseout", () => {
-    upSort.setAttribute("src", "/img/Sort_blur_Z-A.png");
-  });
-}
+upSort.addEventListener("mouseover", () => {
+  upSort.setAttribute("src", "/img/Sort_black_Z-A.png");
+});
+upSort.addEventListener("mouseout", () => {
+  upSort.setAttribute("src", "/img/Sort_blur_Z-A.png");
+});
+inInputDeletebuttn.addEventListener("click", () => {
+  fromInput.value = "";
+});
+inInputDeletebuttn.addEventListener("mouseover", () => {
+  inInputDeletebuttn.setAttribute("src", "/img/delete_button_2.png");
+});
+inInputDeletebuttn.addEventListener("mouseout", () => {
+  inInputDeletebuttn.setAttribute("src", "/img/delete_button.png");
+});
