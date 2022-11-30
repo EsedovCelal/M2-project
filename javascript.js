@@ -39,11 +39,10 @@ addbutton.addEventListener("click", () => {
     });
   });
 });
-
-let selectSortIcon = document.querySelector(".sort img");
-
 let downSort = document.querySelector(".sort img:first-child");
 let upSort = document.querySelector(".sort img:last-child");
+console.log(downSort);
+console.log(upSort);
 downSort.addEventListener("click", () => {
   downSort.style.display = "none";
   upSort.style.display = "block";
@@ -64,17 +63,17 @@ upSort.addEventListener("click", () => {
 });
 
 if ((downSort.style.display = "block")) {
-  selectSortIcon.addEventListener("mouseover", () => {
-    selectSortIcon.setAttribute("src", "/img/Sort_black_A-Z.png");
+  downSort.addEventListener("mouseover", () => {
+    downSort.setAttribute("src", "/img/Sort_black_A-Z.png");
   });
-  selectSortIcon.addEventListener("mouseout", () => {
-    selectSortIcon.setAttribute("src", "/img/Sort_blur_A-Z.png");
+  downSort.addEventListener("mouseout", () => {
+    downSort.setAttribute("src", "/img/Sort_blur_A-Z.png");
   });
 } else if ((upSort.style.display = "block")) {
-  selectSortIcon.addEventListener("mouseover", () => {
-    selectSortIcon.setAttribute("src", "/img/Sort_black_Z-A.png");
+  upSort.addEventListener("mouseover", () => {
+    upSort.setAttribute("src", "/img/Sort_black_Z-A.png");
   });
-  selectSortIcon.addEventListener("mouseout", () => {
-    selectSortIcon.setAttribute("src", "/img/Sort_blur_Z-A.png");
+  upSort.addEventListener("mouseout", () => {
+    upSort.setAttribute("src", "/img/Sort_blur_Z-A.png");
   });
 }
