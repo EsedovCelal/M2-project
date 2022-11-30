@@ -41,17 +41,40 @@ addbutton.addEventListener("click", () => {
 });
 
 let selectSortIcon = document.querySelector(".sort img");
-selectSortIcon.addEventListener("mouseover", () => {
-  selectSortIcon.setAttribute("src", "/img/Sort_black_A-Z.png");
-});
-selectSortIcon.addEventListener("mouseout", () => {
-  selectSortIcon.setAttribute("src", "/img/Sort_blur_A-Z.png");
-});
 
-selectSortIcon.addEventListener("click", () => {
+let downSort = document.querySelector(".sort img:first-child");
+let upSort = document.querySelector(".sort img:last-child");
+downSort.addEventListener("click", () => {
+  downSort.style.display = "none";
+  upSort.style.display = "block";
   let selectListItems = [...document.querySelectorAll(".list-item")];
   selectListItems.sort((a, b) => {
     return parseInt(b.innerText) - parseInt(a.innerText);
   });
   listInHTML.replaceChildren(...listInHTML.children, ...selectListItems);
 });
+upSort.addEventListener("click", () => {
+  upSort.style.display = "none";
+  downSort.style.display = "block";
+  let selectListItems = [...document.querySelectorAll(".list-item")];
+  selectListItems.sort((a, b) => {
+    return parseInt(a.innerText) - parseInt(b.innerText);
+  });
+  listInHTML.replaceChildren(...listInHTML.children, ...selectListItems);
+});
+
+if ((downSort.style.display = "block")) {
+  selectSortIcon.addEventListener("mouseover", () => {
+    selectSortIcon.setAttribute("src", "/img/Sort_black_A-Z.png");
+  });
+  selectSortIcon.addEventListener("mouseout", () => {
+    selectSortIcon.setAttribute("src", "/img/Sort_blur_A-Z.png");
+  });
+} else if ((upSort.style.display = "block")) {
+  selectSortIcon.addEventListener("mouseover", () => {
+    selectSortIcon.setAttribute("src", "/img/Sort_black_Z-A.png");
+  });
+  selectSortIcon.addEventListener("mouseout", () => {
+    selectSortIcon.setAttribute("src", "/img/Sort_blur_Z-A.png");
+  });
+}

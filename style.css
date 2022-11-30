@@ -13,6 +13,9 @@
 .sort img {
   cursor: pointer;
 }
+.sort img:last-child {
+  display: none;
+}
 .list {
   display: none;
   border-radius: 10px;
