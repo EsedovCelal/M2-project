@@ -53,9 +53,9 @@
   margin-left: 50px;
   margin-top: 12px;
 }
-/* .main_input {
+.main_input {
   position: relative;
-} */
+}
 input {
   min-height: 40px;
   width: 276px;
@@ -65,9 +65,11 @@ input {
   margin-bottom: 18px;
   padding-left: 8px;
 }
-/* .main_input img {
+.main_input img {
   position: absolute;
-} */
+  margin-left: 261px;
+  margin-top: 10px;
+}
 .sort {
   display: flex;
   justify-content: flex-end;
